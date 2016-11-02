@@ -1,10 +1,9 @@
 package org.jointheleague.scerruti;
 
-import javax.jdo.annotations.Index;
-
 import com.googlecode.objectify.Key;
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
+import com.googlecode.objectify.annotation.Index;
 import com.googlecode.objectify.annotation.Parent;
 
 import java.util.Date;
@@ -12,12 +11,17 @@ import java.util.Date;
 @Entity
 public class Greeting {
 
-    @Parent Key<Guestbook> theBook;
-    @Id public Long id;
+    @Parent
+    Key<Guestbook> theBook;
+
+    @Id
+    public Long id;
     public String author_email;
     public String author_id;
     public String content;
-    @Index public Date date;
+
+    @Index
+    public Date date;
 
     public Greeting() {
         date = new Date();
